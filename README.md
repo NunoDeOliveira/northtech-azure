@@ -43,7 +43,7 @@ Define frontend, backend, database and application traffic flows.
 
 Estimate the total Azure cost of the project, including administration, testing, temporary deployments and final validation.
 
-1. **Administration and Testing Costs**
+1. **Administration and Testing Costs.**
 Estimate the cost generated while configuring, testing and validating Azure resources before the final deployment.
 
 2. **Deployment and Operational Costs**
