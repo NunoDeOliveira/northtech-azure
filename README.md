@@ -2,7 +2,7 @@
 
 ## Table of Contents
 
-1. [Project Context](#1-project-context)
+1. [Context and Motivation](#1-context-and-motivation)
 2. [Requirements](#2-requirements)
 3. [Architecture Design](#3-architecture-design)
 4. [Cost Estimation](#4-cost-estimation)
@@ -14,15 +14,41 @@
 
 ---
 
-## 1. Project Context
+## 1. Context and Motivation
 
-Describe NorthTech's scenario, current infrastructure, problem and project objectives.
+### 1.1 Context
+
+NorthTech Operations is a company that offer IT services another companies. Currently, maintains an on-premise web portal where witch customers can access the service catalogue, make enquiries and access a private customer area. The platform manages information that requires protection against unauthorized access and data loss.
+
+As the company adds new customers, the application load increases and traffic peaks occur during marketing campaigns, which may afffect service performance. 
+
+On the other hand, the platform is managed by different teams. For example, the development team handles the code and its deployments, while the administrators manage the infrastructure.
+
+Given this scenario, Northtech decides to migrate its application to Microsoft Azure, while keeping part of its infrastructure and internal systems on-premise. The new solution must keep the platform costs under control.
+
+
+### 1.2 Key Challenges
+
+
+
+
+
+### 1.3 Objetives
+
+The objective is not only to deploy a web application, but rather to apply all the AZ-104 areas in a single business scenario.
+
+In addition, the infrastructure will be designed to be created and destroyed using Infrastructure as Code (IaC), reducing costs during the development, testing, and validation phases.
+
 
 ---
 
-## 2. Requirements
+## 2. Technical Requirements
 
-Define functional, technical, security and availability requirements.
+R1. 
+R2.
+R3.
+R4. 
+R5. 
 
 ---
 
