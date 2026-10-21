@@ -88,20 +88,44 @@ Estimate the cost of deploying and operating the complete architecture during th
 
 ## 5. Validation & Results
 
-## 5. Validation & Results
+The following checklist tracks the validation of the project requirements.
+Each completed requirement must be supported by test results and evidence
+available in [Testing Documentation](docs/testing.md).
 
-| Status | Requirement | Area | Validation Test | Expected Result |
-|---|---|---|---|---|
-| [ ] | R01 | Governance | Verify Azure Policy compliance | Resources comply with the defined governance policies. |
-| [ ] | R02 | Identity | Test RBAC permissions | Users can perform only authorized operations. |
-| [ ] | R03 | Networking | Test hybrid VPN connectivity | Bilbao and Madrid can access authorized Azure resources. |
-| [ ] | R04 | Security | Test network segmentation | Unauthorized traffic between network segments is blocked. |
-| [ ] | R05 | Availability | Simulate a VM instance failure | Application remains accessible through healthy instances. |
-| [ ] | R06 | Scalability | Generate increasing application traffic | VMSS scales out according to the defined threshold. |
-| [ ] | R07 | Storage | Verify storage redundancy | The configured redundancy policy is confirmed. |
-| [ ] | R08 | Monitoring | Generate a controlled incident | Azure Monitor detects the event and triggers an alert. |
-| [ ] | R09 | Automation | Deploy and destroy infrastructure using IaC | Infrastructure is created and removed successfully. |
-| [ ] | R10 | Cost Management | Compare estimated and actual costs | Actual expenditure remains within the defined budget. |
+**Governance and Identity Management**
+
+- [ ] Verify resource groups, naming conventions, tags, and Azure Policy compliance.
+- [ ] Verify Microsoft Entra ID identities and RBAC permissions.
+- [ ] Verify protection against accidental deletion and unauthorized modifications.
+
+**Networking and Security**
+
+- [ ] Verify site-to-site VPN connectivity between Bilbao, Madrid, and Azure.
+- [ ] Verify network isolation and NSG filtering between application, database, and management networks.
+- [ ] Verify that administrative access is restricted to authorized users.
+- [ ] Verify that sensitive services are not directly accessible from the public Internet.
+- [ ] Verify that incoming traffic is distributed across healthy backend instances.
+
+**Compute and Storage**
+
+- [ ] Verify application availability during the failure of an individual compute instance.
+- [ ] Verify automatic scaling under increasing and decreasing workloads.
+- [ ] Verify storage redundancy, encryption, and backup configurations.
+- [ ] Verify secure communication between frontend, backend, and database components.
+
+**Monitoring and Operations**
+
+- [ ] Verify collection of infrastructure, application, and network metrics.
+- [ ] Verify alerts triggered by predefined operational or security conditions.
+- [ ] Verify the availability of diagnostic logs and tools to investigate failures.
+- [ ] Verify service or data recovery after a controlled failure.
+
+**Automation and Cost Management**
+
+- [ ] Verify infrastructure deployment using version-controlled IaC templates.
+- [ ] Verify automated creation, configuration, and removal of Azure resources.
+- [ ] Compare estimated costs with actual Azure expenditure.
+- [ ] Verify that unnecessary resources are removed and consumption is minimized.
 
 ---
 
