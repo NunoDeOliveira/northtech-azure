@@ -16,11 +16,12 @@
 
 ## 1. Project Overview
 
+**Context**
 Design, implementation, and validation of an Azure infrastructure for a IT services company, with a focus on governance, identity, network security, scalability, monitoring, and cost management.
 
 This project proposes an architecture comprising a customer-facing web application hosted on Microsoft Azure, whilst retaining certain internal systems on-premises. The design also takes into account the separation of responsibilities between the development and infrastructure teams, as well as the need to control operating costs.
 
-**Main engineering goals:**
+**Main goals:**
 - Organize Azure resources and permissions using governance policies, Microsoft Entra ID, and RBAC.
 - Segment network traffic and protect access to application and data services.
 - Support changes in application demand through appropriate compute and traffic-distribution services.
@@ -28,6 +29,7 @@ This project proposes an architecture comprising a customer-facing web applicati
 - Make deployments reproducible with Infrastructure as Code (IaC).
 
 > Details of [Context](docs/context.md)
+
 > Details of [Requirements](docs/requirements.md)
 
 ---
@@ -88,9 +90,7 @@ Estimate the cost of deploying and operating the complete architecture during th
 
 ## 5. Validation & Results
 
-The following checklist tracks the validation of the project requirements.
-Each completed requirement must be supported by test results and evidence
-available in [Testing Documentation](docs/testing.md).
+The following checklist follow the requirements.
 
 **Governance and Identity Management**
 
