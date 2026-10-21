@@ -29,8 +29,7 @@ This project proposes an architecture comprising a customer-facing web applicati
 - Make deployments reproducible with Infrastructure as Code (IaC).
 
 > Details of [Context](docs/context.md)
-
-> Details of [Requirements](docs/requirements.md)
+ Details of [Requirements](docs/requirements.md)
 
 ---
 
