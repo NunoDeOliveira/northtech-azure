@@ -43,7 +43,7 @@ Design VNets, subnets, compute, security and Azure services.
 3. **Application Architecture**
 Define frontend, backend, database and application traffic flows.
 
-Component selection and trust boundaries are explained in the [architecture documentation](docs/architecture.md).
+> Component selection and trust boundaries are explained in the [architecture documentation](docs/architecture.md).
 
 ---
 
@@ -88,18 +88,20 @@ Estimate the cost of deploying and operating the complete architecture during th
 
 ## 5. Validation & Results
 
-| Status | Requirement | Validation Test | Expected Result |
+## 5. Validation & Results
+
+| Status | Requirement | Area | Validation Test | Expected Result |
 |---|---|---|---|---|
-| ☐ | R01 | Governance | Verify Azure Policy compliance | Resources comply with the defined governance policies. |
-| ☐ | R02 | Identity | Test RBAC permissions | Users can perform only authorized operations. |
-| ☐ | R03 | Networking | Test hybrid VPN connectivity | Bilbao and Madrid can access authorized Azure resources. |
-| ☐ | R04 | Security | Test network segmentation | Unauthorized traffic between network segments is blocked. |
-| ☐ | R05 | Availability | Simulate a VM instance failure | Application remains accessible through healthy instances. |
-| ☐ | R06 | Scalability | Generate increasing application traffic | VMSS scales out according to the defined threshold. |
-| ☐ | R07 | Storage | Verify storage redundancy | The configured redundancy policy is confirmed. |
-| ☐ | R08 | Monitoring | Generate a controlled incident | Azure Monitor detects the event and triggers an alert. |
-| ☐ | R09 | Automation | Deploy and destroy infrastructure using IaC | Infrastructure is created and removed successfully. |
-| ☐ | R10 | Cost Management | Compare estimated and actual costs | Actual expenditure remains within the defined budget. |
+| [ ] | R01 | Governance | Verify Azure Policy compliance | Resources comply with the defined governance policies. |
+| [ ] | R02 | Identity | Test RBAC permissions | Users can perform only authorized operations. |
+| [ ] | R03 | Networking | Test hybrid VPN connectivity | Bilbao and Madrid can access authorized Azure resources. |
+| [ ] | R04 | Security | Test network segmentation | Unauthorized traffic between network segments is blocked. |
+| [ ] | R05 | Availability | Simulate a VM instance failure | Application remains accessible through healthy instances. |
+| [ ] | R06 | Scalability | Generate increasing application traffic | VMSS scales out according to the defined threshold. |
+| [ ] | R07 | Storage | Verify storage redundancy | The configured redundancy policy is confirmed. |
+| [ ] | R08 | Monitoring | Generate a controlled incident | Azure Monitor detects the event and triggers an alert. |
+| [ ] | R09 | Automation | Deploy and destroy infrastructure using IaC | Infrastructure is created and removed successfully. |
+| [ ] | R10 | Cost Management | Compare estimated and actual costs | Actual expenditure remains within the defined budget. |
 
 ---
 
