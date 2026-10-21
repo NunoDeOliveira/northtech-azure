@@ -14,58 +14,25 @@
 
 ---
 
-## 1. Context and Motivation
+## 1. Project Overview
 
-### 1.1 Context
+Design, implementation, and validation of an Azure infrastructure for a IT services company, with a focus on governance, identity, network security, scalability, monitoring, and cost management.
 
-NorthTech Operations is a company that offer IT services another companies. Currently, maintains an on-premise web portal where witch customers can access the service catalogue, make enquiries and access a private customer area. The platform manages information that requires protection against unauthorized access and data loss.
+This project proposes an architecture comprising a customer-facing web application hosted on Microsoft Azure, whilst retaining certain internal systems on-premises. The design also takes into account the separation of responsibilities between the development and infrastructure teams, as well as the need to control operating costs.
 
-As the company adds new customers, the application load increases and traffic peaks occur during marketing campaigns, which may afffect service performance. 
+**Main engineering goals:**
+- Organize Azure resources and permissions using governance policies, Microsoft Entra ID, and RBAC.
+- Segment network traffic and protect access to application and data services.
+- Support changes in application demand through appropriate compute and traffic-distribution services.
+- Monitor infrastructure behavior, verify recovery measures, and evaluate resource costs.
+- Make deployments reproducible with Infrastructure as Code (IaC).
 
-On the other hand, the platform is managed by different teams. For example, the development team handles the code and its deployments, while the administrators manage the infrastructure.
-
-Given this scenario, Northtech decides to migrate its application to Microsoft Azure, while keeping part of its infrastructure and internal systems on-premise. The new solution must keep the platform costs under control.
-
-
-
-### 1.2 Challenges
-
-In order to build this solution, NorthTech must address several challenges.
-
-- How can NorthTech structure its resources hierarchically, apply rules to them, and keep costs within the defined budget?
-
-- How can NorthTech manage its employees identities and control who can access different Azure resources and what actions they are allowed to perform?
-
-- How can NorthTech design a network topology segmented by trust level, restrict access to sensitive resources, and distribute incoming traffic efficiently and resiliently?
-
-- How can NorthTech define a data storage strategy that ensures redundancy and confidentiality while optimizing costs?
-
-- How can NorthTech define its compute infrastructure to respond to changes in load and keep the service available during failures or updates?
-
-- How can NorthTech gain visibility into application and network behavior to detect anomalies before they affect users, diagnose their cause, prioritize critical traffic, and ensure recovery after data loss or service disruption?
-
-
-
-### 1.3 Objetives
-
-The objective is not only to deploy a web application, but rather to apply all the AZ-104 areas in a single business scenario.
-
-In addition, the infrastructure will be designed to be created and destroyed using Infrastructure as Code (IaC), reducing costs during the development, testing, and validation phases.
-
+> Details of [Context](docs/context.md)
+> Details of [Requirements](docs/requirements.md)
 
 ---
 
-## 2. Technical Requirements
-
-R1. 
-R2.
-R3.
-R4. 
-R5. 
-
----
-
-## 3. Architecture Design
+## 2. Architecture Design
 
 1. **Governance and Identity Architecture**
 Define subscriptions, resource groups, Entra ID and RBAC.
@@ -76,7 +43,23 @@ Design VNets, subnets, compute, security and Azure services.
 3. **Application Architecture**
 Define frontend, backend, database and application traffic flows.
 
+Component selection and trust boundaries are explained in the [architecture documentation](docs/architecture.md).
+
 ---
+
+
+## 3. Technical Scope
+
+| Area | Technologies / capabilities addressed |
+| --- | --- |
+| Cloud administration | Microsoft Azure, resource governance, Microsoft Entra ID, RBAC |
+| Networking & security | VNets, subnets, NSGs, private connectivity, Azure Bastion, Application Gateway / WAF |
+| Compute & data | VMSS, PostgreSQL, Azure Storage |
+| Operations | Azure Monitor, Log Analytics, alerts, Network Watcher |
+| Automation | Infrastructure as Code, repeatable deployment and teardown |
+
+---
+
 
 ## 4. Cost Estimation
 
@@ -85,61 +68,48 @@ Estimate the total Azure cost of the project, including administration, testing,
 1. **Administration and Testing Costs.**
 Estimate the cost generated while configuring, testing and validating Azure resources before the final deployment.
 
+| Azure Service | Estimated Cost (€/hour) | Hours | Total Cost (€) |
+|---|---:|---:|---:|
+| Virtual Machines | 0,08 € | 20 | 1,60 € |
+| Azure Database for PostgreSQL | 0,04 € | 12 | 0,48 € |
+| Azure Storage | 0,01 € | 40 | 0,40 € |
+| VPN Gateway | 0,22 € | 6 | 1,32 € |
+| Application Gateway | 0,30 € | 6 | 1,80 € |
+| Azure Monitor | 0,03 € | 20 | 0,60 € |
+| **TOTAL** | | | **6,20 €** |
+
 2. **Deployment and Operational Costs**
 Estimate the cost of deploying and operating the complete architecture during the final validation period.
 
----
 
-## 5. Implementation
-
-### 5.1 Azure Administration and Testing
-
-1. **Governance and Identity Configuration**
-Configure Entra ID, RBAC, policies, tags and locks.
-
-2. **Network and Compute Deployment**
-Deploy VNets, peering, NSGs, Bastion, Application Gateway and VMSS.
-
-3. **Data Services Configuration**
-Configure PostgreSQL, Storage and private connectivity.
-
-4. **Web Application Deployment and Integration**
-Deploy and connect frontend, backend and database.
-
-5. **Monitoring and Observability Configuration**
-Configure Monitor, Log Analytics, alerts and Network Watcher.
-
-### 5.2 Automated Deployment and Operations
-
-1. **Infrastructure as Code**
-Create reusable infrastructure deployment templates.
-
-2. **Infrastructure Deployment Testing**
-Validate automated creation and removal of resources.
-
-3. **Application Deployment**
-Automate application deployment.
-
-4. **Post-Deployment Validation**
-Verify the complete environment after deployment.
 
 ---
 
-## 6. Evaluation
 
-- **Networking**
-Validate connectivity, routing and network isolation.
-- **Security**
-Verify access controls and exposed services.
-- **Scalability**
-Test VMSS autoscaling under generated workload.
-- **Cost Evaluation**
-Compare estimated and actual Azure costs using deployment start and end times.
+## 5. Validation & Results
+
+| Status | Requirement | Validation Test | Expected Result |
+|---|---|---|---|---|
+| ☐ | R01 | Governance | Verify Azure Policy compliance | Resources comply with the defined governance policies. |
+| ☐ | R02 | Identity | Test RBAC permissions | Users can perform only authorized operations. |
+| ☐ | R03 | Networking | Test hybrid VPN connectivity | Bilbao and Madrid can access authorized Azure resources. |
+| ☐ | R04 | Security | Test network segmentation | Unauthorized traffic between network segments is blocked. |
+| ☐ | R05 | Availability | Simulate a VM instance failure | Application remains accessible through healthy instances. |
+| ☐ | R06 | Scalability | Generate increasing application traffic | VMSS scales out according to the defined threshold. |
+| ☐ | R07 | Storage | Verify storage redundancy | The configured redundancy policy is confirmed. |
+| ☐ | R08 | Monitoring | Generate a controlled incident | Azure Monitor detects the event and triggers an alert. |
+| ☐ | R09 | Automation | Deploy and destroy infrastructure using IaC | Infrastructure is created and removed successfully. |
+| ☐ | R10 | Cost Management | Compare estimated and actual costs | Actual expenditure remains within the defined budget. |
 
 ---
 
-## 7. Resources and References
+## 7. Resources and References used
 
-List Microsoft documentation
+- **Dignitae.** *AZ-104T00-A Microsoft Knowledge and Skills with Challenge Labs.* Training material. 
+
+- **Microsoft.** *Course AZ-104T00-A: Microsoft Azure Administrator.* Microsoft Learn. 
+https://learn.microsoft.com/en-us/training/courses/az-104t00
 
 
+
+*This is a personal portfolio project based on a fictional business scenario. It is not an operational NorthTech company deployment.*
