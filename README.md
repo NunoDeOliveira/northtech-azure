@@ -27,9 +27,22 @@ On the other hand, the platform is managed by different teams. For example, the 
 Given this scenario, Northtech decides to migrate its application to Microsoft Azure, while keeping part of its infrastructure and internal systems on-premise. The new solution must keep the platform costs under control.
 
 
-### 1.2 Key Challenges
 
+### 1.2 Challenges
 
+In order to build this solution, NorthTech must address several challenges.
+
+- How can NorthTech structure its resources hierarchically, apply rules to them, and keep costs within the defined budget?
+
+- How can NorthTech manage its employees identities and control who can access different Azure resources and what actions they are allowed to perform?
+
+- How can NorthTech design a network topology segmented by trust level, restrict access to sensitive resources, and distribute incoming traffic efficiently and resiliently?
+
+- How can NorthTech define a data storage strategy that ensures redundancy and confidentiality while optimizing costs?
+
+- How can NorthTech define its compute infrastructure to respond to changes in load and keep the service available during failures or updates?
+
+- How can NorthTech gain visibility into application and network behavior to detect anomalies before they affect users, diagnose their cause, prioritize critical traffic, and ensure recovery after data loss or service disruption?
 
 
 
