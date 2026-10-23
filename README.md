@@ -1,20 +1,25 @@
 # NorthTech Azure
 
-## Table of Contents
+## 1. Structure of project
 
-1. [Context and Motivation](#1-context-and-motivation)
-2. [Requirements](#2-requirements)
-3. [Architecture Design](#3-architecture-design)
-4. [Cost Estimation](#4-cost-estimation)
-5. [Implementation](#5-implementation)
-   - [5.1 Azure Administration and Testing](#51-azure-administration-and-testing)
-   - [5.2 Automated Deployment and Operations](#52-automated-deployment-and-operations)
-6. [Evaluation](#6-evaluation)
-7. [Resources and References](#7-resources-and-references)
+northtech-azure
+.
+├── docs
+│   ├── architecture.md
+│   ├── context.md
+│   ├── implementation.md
+│   ├── infra-requirements.md
+│   └── web-portal-requirements.md
+├── infra
+├── monitoring
+├── README.md
+├── screenshot 
+└── web-app
 
 ---
 
-## 1. Project Overview
+
+## 2. Project Overview
 
 **Context**
 Design, implementation, and validation of an Azure infrastructure for a IT services company, with a focus on governance, identity, network security, scalability, monitoring, and cost management.
@@ -28,28 +33,38 @@ This project proposes an architecture comprising a customer-facing web applicati
 - Monitor infrastructure behavior, verify recovery measures, and evaluate resource costs.
 - Make deployments reproducible with Infrastructure as Code (IaC).
 
-> Details of [Context](docs/context.md)
- Details of [Requirements](docs/requirements.md)
+> Details of [Context](docs/context.md)<br>
+> Details of [Requirements](docs/requirements.md)
 
 ---
 
-## 2. Architecture Design
 
-1. **Governance and Identity Architecture**
-Define subscriptions, resource groups, Entra ID and RBAC.
+## 3. Architecture Design
 
-2. **Infrastructure Architecture**
-Design VNets, subnets, compute, security and Azure services.
-
-3. **Application Architecture**
+1. **Web Portal design**<br>
 Define frontend, backend, database and application traffic flows.
 
-> Component selection and trust boundaries are explained in the [architecture documentation](docs/architecture.md).
+![Web Portal design](docs/diagrams/applicationWeb.png)
+
+
+2. **Infrastructure design**<br>
+Design VNets, subnets, compute, security and Azure services.
+
+![Infrastructure design](docs/diagrams/infrastructure.png)
+
+
+3. **Governance and Identity diagram**<br>
+Define subscriptions, resource groups, Entra ID and RBAC.
+
+![Governance diagram](docs/diagrams/infrastructure.png)
+
+
+> Component selection of components is explained in the [architecture documentation](docs/architecture.md).
 
 ---
 
 
-## 3. Technical Scope
+## 4. Technical Scope
 
 | Area | Technologies / capabilities addressed |
 | --- | --- |
@@ -62,11 +77,9 @@ Define frontend, backend, database and application traffic flows.
 ---
 
 
-## 4. Cost Estimation
+## 5. Cost Estimation
 
-Estimate the total Azure cost of the project, including administration, testing, temporary deployments and final validation.
-
-1. **Administration and Testing Costs.**
+1. **Administration and Testing Costs.**<br>
 Estimate the cost generated while configuring, testing and validating Azure resources before the final deployment.
 
 | Azure Service | Estimated Cost (€/hour) | Hours | Total Cost (€) |
@@ -79,15 +92,24 @@ Estimate the cost generated while configuring, testing and validating Azure reso
 | Azure Monitor | 0,03 € | 20 | 0,60 € |
 | **TOTAL** | | | **6,20 €** |
 
-2. **Deployment and Operational Costs**
+2. **Deployment and Operational Costs**<br>
 Estimate the cost of deploying and operating the complete architecture during the final validation period.
+
+| Azure Service | Estimated Cost (€/hour) | Hours | Total Cost (€) |
+|---|---:|---:|---:|
+| Azure Monitor | 0,03 € | 20 | 0,60 € |
+
+---
+
+
+## 6. Quick start
 
 
 
 ---
 
 
-## 5. Validation & Results
+## 7. Validation and Results
 
 The following checklist follow the requirements.
 
@@ -128,13 +150,19 @@ The following checklist follow the requirements.
 
 ---
 
-## 7. Resources and References used
 
-- **Dignitae.** *AZ-104T00-A Microsoft Knowledge and Skills with Challenge Labs.* Training material. 
-
-- **Microsoft.** *Course AZ-104T00-A: Microsoft Azure Administrator.* Microsoft Learn. 
+## 8. Resources used
+- Dignitae. *AZ-104T00-A Microsoft Knowledge and Skills with Challenge Labs.* Training material. 
+- Microsoft. *Course AZ-104T00-A: Microsoft Azure Administrator.* Microsoft Learn.<br> 
 https://learn.microsoft.com/en-us/training/courses/az-104t00
-
+- Microsoft. *Azure Pricing Calculator.* Microsoft Azure.<br> 
+https://azure.microsoft.com/en-us/pricing/calculator/
+- Microsoft. *Azure for Network Engineers.* Microsoft Learn.<br> 
+https://learn.microsoft.com/en-us/azure/networking/azure-for-network-engineers?toc=/azure/networking/toc.json
+- Microsoft. *Azure Networking Documentation.* Microsoft Learn.<br> 
+https://learn.microsoft.com/en-us/azure/networking/
+- Microsoft. *Azure Bastion Documentation.* Microsoft Learn.<br> 
+https://learn.microsoft.com/en-us/azure/bastion/
 
 
 *This is a personal portfolio project based on a fictional business scenario. It is not an operational NorthTech company deployment.*
