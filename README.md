@@ -2,19 +2,19 @@
 
 ## 1. Structure of project
 
-northtech-azure
-.
-├── docs
-│   ├── architecture.md
-│   ├── context.md
-│   ├── implementation.md
-│   ├── infra-requirements.md
-│   └── web-portal-requirements.md
-├── infra
-├── monitoring
-├── README.md
-├── screenshot 
-└── web-app
+northtech-azure<br>
+.<br>
+├── docs<br>
+│   ├── architecture.md<br>
+│   ├── context.md<br>
+│   ├── implementation.md<br>
+│   ├── infra-requirements.md<br>
+│   └── web-portal-requirements.md<br>
+├── infra<br>
+├── monitoring<br>
+├── README.md<br>
+├── screenshot<br>
+└── web-app<br>
 
 ---
 
@@ -34,7 +34,8 @@ This project proposes an architecture comprising a customer-facing web applicati
 - Make deployments reproducible with Infrastructure as Code (IaC).
 
 > Details of [Context](docs/context.md)<br>
-> Details of [Requirements](docs/requirements.md)
+> Details of [Requirements](docs/web-portal-requirements.md)<br>
+> Details of [Requirements](docs/infra-requirements.md)
 
 ---
 
@@ -155,6 +156,13 @@ The following checklist follow the requirements.
 - Dignitae. *AZ-104T00-A Microsoft Knowledge and Skills with Challenge Labs.* Training material. 
 - Microsoft. *Course AZ-104T00-A: Microsoft Azure Administrator.* Microsoft Learn.<br> 
 https://learn.microsoft.com/en-us/training/courses/az-104t00
+- Microsoft. *Configuración de una aplicación de App Service* Microsoft Learn.<br>
+https://learn.microsoft.com/en-us/azure/app-service/configure-common
+- Microsoft. *Secure your Azure App Service deployment* Microsoft Learn.<br>
+https://learn.microsoft.com/en-us/azure/app-service/overview-security
+
+
+
 - Microsoft. *Azure Pricing Calculator.* Microsoft Azure.<br> 
 https://azure.microsoft.com/en-us/pricing/calculator/
 - Microsoft. *Azure for Network Engineers.* Microsoft Learn.<br> 
